@@ -43,9 +43,9 @@ if nargin ~=2
     return;
 end   
 
-[data1, Srate1, Nbits1]= wavread(cleanFile);
-[data2, Srate2, Nbits2]= wavread(enhdFile);
-if (( Srate1~= Srate2) | ( Nbits1~= Nbits2))
+[data1, Srate1]= audioread(cleanFile);
+[data2, Srate2]= audioread(enhdFile);
+if (Srate1~= Srate2)
     error( 'The two files do not match!\n');
 end
   

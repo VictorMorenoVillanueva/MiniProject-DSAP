@@ -27,7 +27,7 @@ if nargin<2
    return;
 end
 
-[x,Srate,nbits]=wavread(filename);
+[x,Srate,nbits]=audioread(filename);
 
 
 % =============== Initialize variables ===============
@@ -125,7 +125,7 @@ end
 %========================================================================================
 
 
-wavwrite(winGain*xfinal,Srate,16,outfile);
+audiowrite(winGain*xfinal,Srate,16,outfile);
 
 
 %--------------------------------------------------------------------------
