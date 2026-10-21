@@ -1,15 +1,30 @@
-function specsub(filename,outfile)
+function specsub(filename,outfile,params)
 
 %  Implements the basic power spectral subtraction algorithm [1].
-% 
+%
 %  Usage:  specsub(noisyFile, outputFile)
-%           
+%          specsub(noisyFile, outputFile, params)
+%
 %         noisyFile - noisy speech file in .wav format
 %         outputFile - enhanced output file in .wav format
+%         params - (optional) struct, any missing field takes its default:
+%           alpha      - power exponent: 2 power SS, 1 magnitude SS (default 2)
+%           FLOOR      - spectral floor, Berouti's "beta" (default 0.002)
+%           beta_fixed - fixed oversubtraction factor, Berouti's "alpha".
+%                        [] uses the SNR-dependent rule berouti() (default [])
+%           useVAD     - 1 updates the noise psd with the simple VAD, 0 keeps
+%                        the initial estimate for the whole file (default 1)
+%           Thres      - VAD threshold in dB SNRseg (default 3)
+%           G          - noise update smoothing factor (default 0.9)
+%           Nnoise     - number of initial frames for noise psd (default 5)
 %
-%   Algorithm uses the first 5 frames to estimate the noise psd, and 
+%   Algorithm uses the first Nnoise frames to estimate the noise psd, and
 %   then uses a very simple VAD algorithm for updating the noise psd.
 %   Alternatively, the VAD in the file ss_rdc.m (this folder) can be used.
+%
+%   NOTE on notation: in this code "alpha" is the power exponent and "beta"
+%   the oversubtraction factor, while in [1] alpha is the oversubtraction
+%   factor and beta the spectral floor (FLOOR here).
 %
 %  References:
 %   [1] Berouti, M., Schwartz, M., and Makhoul, J. (1979). Enhancement of speech 
@@ -26,8 +41,9 @@ if nargin<2
    fprintf('Usage: specsub noisyfile.wav outFile.wav \n\n');
    return;
 end
+if nargin<3, params=struct(); end
 
-[x,Srate,nbits]=audioread(filename);
+[x,Srate]=audioread(filename);
 
 
 % =============== Initialize variables ===============
@@ -40,24 +56,27 @@ len1=floor(len*PERC/100);
 len2=len-len1; 
 
 
-Thres=3; % VAD threshold in dB SNRseg 
-alpha=2.0; % power exponent
-FLOOR=0.002;
-G=0.9;
+Thres=getparam(params,'Thres',3); % VAD threshold in dB SNRseg
+alpha=getparam(params,'alpha',2.0); % power exponent
+FLOOR=getparam(params,'FLOOR',0.002);
+G=getparam(params,'G',0.9);
+beta_fixed=getparam(params,'beta_fixed',[]); % [] -> SNR-dependent oversubtraction
+useVAD=getparam(params,'useVAD',1);
+Nnoise=getparam(params,'Nnoise',5);
 
 win=hamming(len); %tukey(len,PERC);  % define window
 winGain=len2/sum(win); % normalization gain for overlap+add with 50% overlap
 
-% Noise magnitude calculations - assuming that the first 5 frames is noise/silence
+% Noise magnitude calculations - assuming that the first Nnoise frames is noise/silence
 %
 nFFT=2*2^nextpow2(len);
 noise_mean=zeros(nFFT,1);
 j=1;
-for k=1:5
+for k=1:Nnoise
    noise_mean=noise_mean+abs(fft(win.*x(j:j+len-1),nFFT));
    j=j+len;
 end
-noise_mu=noise_mean/5;
+noise_mu=noise_mean/Nnoise;
 
 %--- allocate memory and initialize various variables
    
@@ -80,7 +99,9 @@ for n=1:Nframes
    
    SNRseg=10*log10(norm(sig,2)^2/norm(noise_mu,2)^2);
    
-   if alpha==1.0
+   if ~isempty(beta_fixed)
+      beta=beta_fixed;
+   elseif alpha==1.0
       beta=berouti1(SNRseg);
    else
      beta=berouti(SNRseg);
@@ -100,7 +121,7 @@ for n=1:Nframes
    
    % --- implement a simple VAD detector --------------
    %
-   if (SNRseg < Thres)   % Update noise spectrum
+   if useVAD && (SNRseg < Thres)   % Update noise spectrum
       noise_temp = G*noise_mu.^alpha+(1-G)*sig.^alpha;   
       noise_mu=noise_temp.^(1/alpha);   % new noise spectrum
    end
@@ -125,10 +146,18 @@ end
 %========================================================================================
 
 
-audiowrite(winGain*xfinal,Srate,16,outfile);
+audiowrite(outfile,winGain*xfinal,Srate,'BitsPerSample',16);
 
 
 %--------------------------------------------------------------------------
+
+function v=getparam(params,name,default)
+% Returns params.(name) if present, otherwise the default value
+if isfield(params,name)
+   v=params.(name);
+else
+   v=default;
+end
 
 function a=berouti1(SNR)
 

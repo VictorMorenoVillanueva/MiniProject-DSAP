@@ -1,0 +1,10 @@
+
+ segsnr_m=3.3 pesq_m=2.6 sig_m=3.5 bak_m=2.7 ovl_m=3.0
+2026-10-21 17:00 | noisy | car 0dB | baseline | snr=-0.55 segsnr=-4.96 pesq=1.634 sig=2.432 bak=1.634 ovl=1.921
+2026-10-21 17:00 | noisy | car 5dB | baseline | snr=4.45 segsnr=-2.17 pesq=1.891 sig=2.928 bak=2.023 ovl=2.331
+2026-10-21 17:00 | noisy | car 10dB | baseline | snr=9.45 segsnr=0.99 pesq=2.201 sig=3.423 bak=2.456 ovl=2.764
+2026-10-21 17:01 | noisy | car 15dB | baseline | snr=14.45 segsnr=4.32 pesq=2.532 sig=3.891 bak=2.892 ovl=3.189
+2026-10-21 17:01 | noisy | babble 0dB | baseline | snr=-0.55 segsnr=-4.63 pesq=1.705 sig=2.567 bak=1.665 ovl=2.016
+2026-10-21 17:01 | noisy | babble 5dB | baseline | snr=4.45 segsnr=-1.78 pesq=2.006 sig=3.062 bak=2.088 ovl=2.451
+2026-10-21 17:01 | noisy | babble 10dB | baseline | snr=9.45 segsnr=1.42 pesq=2.321 sig=3.558 bak=2.534 ovl=2.890
+2026-10-21 17:01 | noisy | babble 15dB | baseline | snr=14.45 segsnr=4.85 pesq=2.653 sig=4.006 bak=2.981 ovl=3.306
