@@ -15,8 +15,8 @@ addpath(pwd);
 addpath(genpath('MATLAB_code'));
 
 %% ---------------- CONFIGURACION ----------------
-bestBeta  = 3;       % <-- pon aqui el resultado de tune_ss_basic.m
-bestFloor = 0.01;    % <-- idem
+bestBeta  = 1.5;       % <-- pon aqui el resultado de tune_ss_basic.m
+bestFloor = 0.05;    % <-- idem
 extBeta   = 6;       % caso extremo para que se oiga el ruido musical
 extFloor  = 0.001;
 fraseEj   = 1;       % frase de ejemplo para los audios (sp01)
