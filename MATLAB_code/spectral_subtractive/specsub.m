@@ -27,7 +27,7 @@ if nargin<2
    return;
 end
 
-[x,Srate,nbits]=audioread(filename);
+[x,Srate]=audioread(filename);
 
 
 % =============== Initialize variables ===============
@@ -45,6 +45,9 @@ alpha=2.0; % power exponent
 FLOOR=0.002;
 G=0.9;
 
+USE_VAD = 1;         % 1 = VAD enabled, 0 = VAD disabled
+NNoiseFrames = 5;    % Number of initial noise-only frames
+
 win=hamming(len); %tukey(len,PERC);  % define window
 winGain=len2/sum(win); % normalization gain for overlap+add with 50% overlap
 
@@ -53,11 +56,13 @@ winGain=len2/sum(win); % normalization gain for overlap+add with 50% overlap
 nFFT=2*2^nextpow2(len);
 noise_mean=zeros(nFFT,1);
 j=1;
-for k=1:5
-   noise_mean=noise_mean+abs(fft(win.*x(j:j+len-1),nFFT));
-   j=j+len;
+for k=1:NNoiseFrames
+    noise_mean = noise_mean + ...
+        abs(fft(win.*x(j:j+len-1),nFFT));
+    j = j + len;
 end
-noise_mu=noise_mean/5;
+
+noise_mu = noise_mean/NNoiseFrames;
 
 %--- allocate memory and initialize various variables
    
@@ -100,9 +105,11 @@ for n=1:Nframes
    
    % --- implement a simple VAD detector --------------
    %
-   if (SNRseg < Thres)   % Update noise spectrum
-      noise_temp = G*noise_mu.^alpha+(1-G)*sig.^alpha;   
-      noise_mu=noise_temp.^(1/alpha);   % new noise spectrum
+   if USE_VAD == 1 && SNRseg < Thres
+       noise_temp = G*noise_mu.^alpha + ...
+           (1-G)*sig.^alpha;
+
+       noise_mu = noise_temp.^(1/alpha);
    end
    
    
@@ -125,7 +132,7 @@ end
 %========================================================================================
 
 
-audiowrite(winGain*xfinal,Srate,16,outfile);
+audiowrite(outfile, winGain*xfinal, Srate);
 
 
 %--------------------------------------------------------------------------
