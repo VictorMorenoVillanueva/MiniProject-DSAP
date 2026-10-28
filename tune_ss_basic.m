@@ -1,91 +1,94 @@
-%% tune_ss_basic.m  -  FASE A: barrido rapido de la SS basica
+%% tune_ss_basic.m  -  STEP A: parameter sweep for basic spectral subtraction
 %
-% 1) Fija FLOOR = 0.002 y prueba varios valores de sobresustraccion fija
-%    (y Berouti, el original, como referencia).
-% 2) Con la mejor sobresustraccion, prueba varios FLOOR.
-% El VAD y las 5 tramas iniciales no se tocan.
+% 1) Fix FLOOR = 0.002 and try several fixed over-subtraction values
+%    (plus Berouti's adaptive beta, the original code, as reference).
+% 2) With the best over-subtraction, try several FLOOR values.
+% The VAD and the 5 initial noise frames are not changed.
 %
-% Usa pocas frases (nFiles) para ir rapido. Guarda:
-%   tuning_beta.csv, tuning_floor.csv  -> tablas de parametros
-%   tuning_ss_basic.mat                -> todo
-% y dibuja PESQ y ovl frente a cada parametro.
+% nFiles sets how many sentences are used. Saves:
+%   tuning_beta.csv, tuning_floor.csv  -> parameter tables
+%   tuning_ss_basic.mat                -> everything
+% and plots PESQ and OVL against each parameter.
 %
-% Ejecutar desde la carpeta Files4miniproject_Students.
+% Run from the Files4miniproject_Students folder.
 
 clear; close all; clc;
 addpath(pwd);
 addpath(genpath('MATLAB_code'));
 
-%% ---------------- CONFIGURACION ----------------
-nFiles  = 30;                                    % frases por condicion
+%% ---------------- CONFIGURATION ----------------
+nFiles  = 30;                                   % sentences per condition
 conds   = {'car',10; 'car',0; 'babble',10; 'babble',0};
-betas   = [NaN 0.5 1 1.5 2 3 4 5 6 8];                    % NaN = Berouti (original)
+betas   = [NaN 0.5 1 1.5 2 3 4 5 6 8];          % NaN = Berouti (original)
 floors  = [0.001 0.002 0.005 0.01 0.02 0.05 0.1 0.2 0.5];
-FLOOR_0 = 0.002;                                % FLOOR durante el paso 1
-criterio = 2;                                   % 2 = PESQ, 5 = ovl
+FLOOR_0 = 0.002;                                % FLOOR used in step 1
+criterio = 2;                                   % selection criterion: 2 = PESQ, 5 = OVL
 
 condNames = cellfun(@(a,b) sprintf('%s_%ddB',a,b), conds(:,1), conds(:,2), ...
                     'UniformOutput', false);
 
-%% ---------------- PASO 1: sobresustraccion ----------------
-fprintf('PASO 1: barrido de beta (FLOOR = %g)\n', FLOOR_0);
+%% ---------------- STEP 1: over-subtraction ----------------
+fprintf('STEP 1: beta sweep (FLOOR = %g)\n', FLOOR_0);
 Rb = zeros(numel(conds(:,1)),5,numel(betas));
 for i = 1:numel(betas)
     tic;
     Rb(:,:,i) = eval_ss_cfg(betas(i), FLOOR_0, conds, nFiles);
-    fprintf('  beta = %-7s  PESQ medio = %.3f  ovl medio = %.3f  (%.0f s)\n', ...
+    fprintf('  beta = %-7s  mean PESQ = %.3f  mean OVL = %.3f  (%.0f s)\n', ...
             betaTxt(betas(i)), mean(Rb(:,2,i)), mean(Rb(:,5,i)), toc);
 end
 writeTable('tuning_beta.csv', betas, repmat(FLOOR_0,size(betas)), Rb, condNames);
 
-% Mejor beta fija (media del criterio sobre las 4 condiciones)
+% Best fixed beta (criterion averaged over the 4 conditions)
 fijos = find(~isnan(betas));
 [~, k] = max(squeeze(mean(Rb(:,criterio,fijos),1)));
 bestBeta = betas(fijos(k));
-fprintf('--> Mejor beta fija: %g\n\n', bestBeta);
+fprintf('--> Best fixed beta: %g\n\n', bestBeta);
 
-%% ---------------- PASO 2: suelo ----------------
-fprintf('PASO 2: barrido de FLOOR (beta = %g)\n', bestBeta);
+%% ---------------- STEP 2: FLOOR ----------------
+fprintf('STEP 2: FLOOR sweep (beta = %g)\n', bestBeta);
 Rf = zeros(numel(conds(:,1)),5,numel(floors));
 for i = 1:numel(floors)
     tic;
     Rf(:,:,i) = eval_ss_cfg(bestBeta, floors(i), conds, nFiles);
-    fprintf('  FLOOR = %-6g  PESQ medio = %.3f  ovl medio = %.3f  (%.0f s)\n', ...
+    fprintf('  FLOOR = %-6g  mean PESQ = %.3f  mean OVL = %.3f  (%.0f s)\n', ...
             floors(i), mean(Rf(:,2,i)), mean(Rf(:,5,i)), toc);
 end
 writeTable('tuning_floor.csv', repmat(bestBeta,size(floors)), floors, Rf, condNames);
 
+% Best FLOOR (criterion averaged over the 4 conditions)
 [~, k] = max(squeeze(mean(Rf(:,criterio,:),1)));
 bestFloor = floors(k);
-fprintf('--> Mejor FLOOR: %g\n', bestFloor);
-fprintf('\nMEJOR CONFIGURACION (con %d frases): beta = %g, FLOOR = %g\n', ...
+fprintf('--> Best FLOOR: %g\n', bestFloor);
+fprintf('\nBEST CONFIGURATION (%d sentences): beta = %g, FLOOR = %g\n', ...
         nFiles, bestBeta, bestFloor);
-fprintf('Ponla en final_ss_basic.m y ejecutalo con las 30 frases.\n');
+fprintf('Put it in final_ss_basic.m and run it with all 30 sentences.\n');
 
 save('tuning_ss_basic.mat','betas','floors','Rb','Rf','conds','nFiles', ...
      'bestBeta','bestFloor','FLOOR_0');
 
-%% ---------------- GRAFICAS ----------------
+%% ---------------- PLOTS ----------------
 xb = betas(fijos);
-figure('Name','Barrido beta');
+figure('Name','Beta sweep');
 subplot(1,2,1); plot(xb, squeeze(Rb(:,2,fijos))', '-o'); grid on;
-xlabel('\beta (sobresustraccion fija)'); ylabel('PESQ'); title(sprintf('FLOOR = %g',FLOOR_0));
+xlabel('\beta (fixed over-subtraction)'); ylabel('PESQ'); title(sprintf('FLOOR = %g',FLOOR_0));
 subplot(1,2,2); plot(xb, squeeze(Rb(:,5,fijos))', '-o'); grid on;
-xlabel('\beta (sobresustraccion fija)'); ylabel('ovl');
+xlabel('\beta (fixed over-subtraction)'); ylabel('OVL');
 legend(strrep(condNames,'_',' '),'Location','best');
 
-figure('Name','Barrido FLOOR');
+figure('Name','FLOOR sweep');
 subplot(1,2,1); semilogx(floors, squeeze(Rf(:,2,:))', '-o'); grid on;
 xlabel('FLOOR'); ylabel('PESQ'); title(sprintf('\\beta = %g',bestBeta));
 subplot(1,2,2); semilogx(floors, squeeze(Rf(:,5,:))', '-o'); grid on;
-xlabel('FLOOR'); ylabel('ovl');
+xlabel('FLOOR'); ylabel('OVL');
 legend(strrep(condNames,'_',' '),'Location','best');
 
-%% ---------------- FUNCIONES AUXILIARES ----------------
+%% ---------------- HELPER FUNCTIONS ----------------
+% Label for a beta value ('Berouti' for the adaptive original)
 function s = betaTxt(b)
 if isnan(b), s = 'Berouti'; else, s = sprintf('%g',b); end
 end
 
+% Write a results table (one row per configuration) as a CSV file
 function writeTable(file, betas, floors, R, condNames)
 meas = {'SegSNR','PESQ','sig','bak','ovl'};
 fid = fopen(file,'w');
@@ -102,5 +105,5 @@ for i = 1:numel(betas)
     fprintf(fid,'\n');
 end
 fclose(fid);
-fprintf('  (guardado %s)\n', file);
+fprintf('  (saved %s)\n', file);
 end

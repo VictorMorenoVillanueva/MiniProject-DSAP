@@ -1,38 +1,39 @@
-%% final_ss_basic.m  -  FASE B: resultados finales y audios de la SS basica
+%% final_ss_basic.m  -  STEP B: final results and audio examples for basic SS
 %
-% Evalua con las 30 frases y las 4 condiciones:
-%   - SS original (Berouti, FLOOR = 0.002)  -> referencia
-%   - SS con la mejor configuracion (beta fija + FLOOR)
-% Guarda:
-%   results_ss_basic.csv  -> en el orden de columnas de la tabla Excel
-%   audios_ss_basic/      -> frase de ejemplo: ruidosa, original, mejor y extremo
+% Evaluates on all 30 sentences and the 4 conditions:
+%   - Original SS (Berouti, FLOOR = 0.002)  -> reference
+%   - SS with the best configuration (fixed beta + FLOOR)
+% Saves:
+%   results_ss_basic.csv  -> same column order as the Excel results table
+%   audios_ss_basic/      -> example sentence: noisy, original, best and extreme
 %
-% Ejecutar desde la carpeta Files4miniproject_Students.
-% Tarda bastante (30 frases x 4 condiciones x 2 sistemas).
+% Run from the Files4miniproject_Students folder.
+% Takes a while (30 sentences x 4 conditions x 2 systems).
 
 clear; close all; clc;
 addpath(pwd);
 addpath(genpath('MATLAB_code'));
 
-%% ---------------- CONFIGURACION ----------------
-bestBeta  = 1.5;       % <-- pon aqui el resultado de tune_ss_basic.m
-bestFloor = 0.05;    % <-- idem
-extBeta   = 6;       % caso extremo para que se oiga el ruido musical
+%% ---------------- CONFIGURATION ----------------
+bestBeta  = 5;        % <-- result of tune_ss_basic.m
+bestFloor = 0.002;    % <-- same
+extBeta   = 6;        % extreme case, so the musical noise can be heard
 extFloor  = 0.001;
-fraseEj   = 1;       % frase de ejemplo para los audios (sp01)
+fraseEj   = 1;        % example sentence for the audio files (sp01)
 nFiles    = 30;
 conds     = {'car',10; 'car',0; 'babble',10; 'babble',0};
 
-%% ---------------- RESULTADOS (30 frases) ----------------
-fprintf('SS original (Berouti, FLOOR = 0.002)...\n');
+%% ---------------- RESULTS (30 sentences) ----------------
+fprintf('Original SS (Berouti, FLOOR = 0.002)...\n');
 R_orig = eval_ss_cfg([], 0.002, conds, nFiles);
-fprintf('SS mejor (beta = %g, FLOOR = %g)...\n', bestBeta, bestFloor);
+fprintf('Best SS (beta = %g, FLOOR = %g)...\n', bestBeta, bestFloor);
 R_best = eval_ss_cfg(bestBeta, bestFloor, conds, nFiles);
 
 names = {'SS basic (Berouti, FLOOR=0.002)', ...
          sprintf('SS basic (beta=%g, FLOOR=%g)', bestBeta, bestFloor)};
 R = {R_orig, R_best};
 
+% Write the results as CSV (same column order as the Excel table)
 meas = {'SegSNR','PESQ','sig','bak','ovl'};
 fid = fopen('results_ss_basic.csv','w');
 fprintf(fid,'Technique');
@@ -49,7 +50,7 @@ for s = 1:2
 end
 fclose(fid);
 
-% Mostrar en pantalla
+% Show the results on screen
 for s = 1:2
     fprintf('\n%s\n', names{s});
     for c = 1:size(conds,1)
@@ -58,9 +59,11 @@ for s = 1:2
     end
 end
 save('results_ss_basic.mat','R_orig','R_best','bestBeta','bestFloor','conds','nFiles');
-fprintf('\nGuardado results_ss_basic.csv\n');
+fprintf('\nSaved results_ss_basic.csv\n');
 
-%% ---------------- AUDIOS DE EJEMPLO ----------------
+%% ---------------- AUDIO EXAMPLES ----------------
+% Note: the file names (_1_ruidosa, _2_original, _3_mejor, _4_extremo, _0_limpia)
+% are kept as they are because make_figures.m reads these exact names.
 outDir = 'audios_ss_basic';
 if ~exist(outDir,'dir'), mkdir(outDir); end
 for c = 1:size(conds,1)
@@ -68,11 +71,11 @@ for c = 1:size(conds,1)
     noisyFile = fullfile(noise, sprintf('%ddB',snr), ...
                          sprintf('sp%02d_%s_sn%d.wav',fraseEj,noise,snr));
     base = fullfile(outDir, sprintf('sp%02d_%s_%ddB',fraseEj,noise,snr));
-    copyfile(noisyFile, [base '_1_ruidosa.wav']);
-    specsub(noisyFile, [base '_2_original.wav'], [], 0.002);
-    specsub(noisyFile, [base '_3_mejor.wav'], bestBeta, bestFloor);
-    specsub(noisyFile, [base '_4_extremo.wav'], extBeta, extFloor);
+    copyfile(noisyFile, [base '_1_ruidosa.wav']);                  % noisy
+    specsub(noisyFile, [base '_2_original.wav'], [], 0.002);        % original SS
+    specsub(noisyFile, [base '_3_mejor.wav'], bestBeta, bestFloor); % best configuration
+    specsub(noisyFile, [base '_4_extremo.wav'], extBeta, extFloor); % extreme (musical noise)
 end
 copyfile(fullfile('clean',sprintf('sp%02d.wav',fraseEj)), ...
-         fullfile(outDir,sprintf('sp%02d_0_limpia.wav',fraseEj)));
-fprintf('Audios guardados en la carpeta %s\n', outDir);
+         fullfile(outDir,sprintf('sp%02d_0_limpia.wav',fraseEj)));  % clean reference
+fprintf('Audio files saved in folder %s\n', outDir);
