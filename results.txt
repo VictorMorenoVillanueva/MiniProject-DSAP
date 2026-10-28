@@ -1,2 +1,174 @@
 
+ segsnr_m=3.3 pesq_m=2.6 sig_m=3.5 bak_m=2.7 ovl_m=3.0
+2026-10-21 17:00 | noisy | car 0dB | baseline | snr=-0.55 segsnr=-4.96 pesq=1.634 sig=2.432 bak=1.634 ovl=1.921
+2026-10-21 17:00 | noisy | car 5dB | baseline | snr=4.45 segsnr=-2.17 pesq=1.891 sig=2.928 bak=2.023 ovl=2.331
+2026-10-21 17:00 | noisy | car 10dB | baseline | snr=9.45 segsnr=0.99 pesq=2.201 sig=3.423 bak=2.456 ovl=2.764
+2026-10-21 17:01 | noisy | car 15dB | baseline | snr=14.45 segsnr=4.32 pesq=2.532 sig=3.891 bak=2.892 ovl=3.189
+2026-10-21 17:01 | noisy | babble 0dB | baseline | snr=-0.55 segsnr=-4.63 pesq=1.705 sig=2.567 bak=1.665 ovl=2.016
+2026-10-21 17:01 | noisy | babble 5dB | baseline | snr=4.45 segsnr=-1.78 pesq=2.006 sig=3.062 bak=2.088 ovl=2.451
+2026-10-21 17:01 | noisy | babble 10dB | baseline | snr=9.45 segsnr=1.42 pesq=2.321 sig=3.558 bak=2.534 ovl=2.890
+2026-10-21 17:01 | noisy | babble 15dB | baseline | snr=14.45 segsnr=4.85 pesq=2.653 sig=4.006 bak=2.981 ovl=3.306
+2026-10-21 18:04 | mband | car 5dB | N=2 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=7.63 segsnr=-0.08 pesq=2.222 sig=3.128 bak=2.347 ovl=2.609
+2026-10-21 18:04 | mband | babble 5dB | N=2 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=6.01 segsnr=-0.83 pesq=2.204 sig=2.950 bak=2.201 ovl=2.480
+2026-10-21 18:05 | mband | car 5dB | N=2 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=7.91 segsnr=0.65 pesq=2.241 sig=3.193 bak=2.385 ovl=2.645
+2026-10-21 18:05 | mband | babble 5dB | N=2 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=6.86 segsnr=0.01 pesq=2.208 sig=3.010 bak=2.220 ovl=2.499
+2026-10-21 18:05 | mband | car 5dB | N=2 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=7.61 segsnr=-0.09 pesq=2.225 sig=3.143 bak=2.344 ovl=2.617
+2026-10-21 18:05 | mband | babble 5dB | N=2 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=5.99 segsnr=-0.84 pesq=2.205 sig=2.957 bak=2.197 ovl=2.482
+2026-10-21 18:06 | mband | car 5dB | N=4 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=7.71 segsnr=-0.09 pesq=2.176 sig=3.077 bak=2.326 ovl=2.561
+2026-10-21 18:06 | mband | babble 5dB | N=4 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=6.21 segsnr=-0.70 pesq=2.248 sig=3.065 bak=2.254 ovl=2.567
+2026-10-21 18:06 | mband | car 5dB | N=4 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=7.61 segsnr=0.38 pesq=2.276 sig=3.293 bak=2.389 ovl=2.714
+2026-10-21 18:06 | mband | babble 5dB | N=4 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=6.48 segsnr=-0.34 pesq=2.225 sig=3.038 bak=2.214 ovl=2.524
+2026-10-21 18:07 | mband | car 5dB | N=4 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=7.63 segsnr=-0.13 pesq=2.175 sig=3.079 bak=2.317 ovl=2.560
+2026-10-21 18:07 | mband | babble 5dB | N=4 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=6.16 segsnr=-0.73 pesq=2.248 sig=3.033 bak=2.243 ovl=2.548
+2026-10-21 18:07 | mband | car 5dB | N=6 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=7.73 segsnr=-0.08 pesq=2.144 sig=3.147 bak=2.314 ovl=2.581
+2026-10-21 18:07 | mband | babble 5dB | N=6 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=6.41 segsnr=-0.58 pesq=2.259 sig=3.170 bak=2.276 ovl=2.629
+2026-10-21 18:07 | mband | car 5dB | N=6 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=7.59 segsnr=-0.10 pesq=2.162 sig=3.143 bak=2.293 ovl=2.577
+2026-10-21 18:08 | mband | babble 5dB | N=6 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=6.74 segsnr=-0.43 pesq=2.199 sig=3.003 bak=2.209 ovl=2.498
+2026-10-21 18:08 | mband | car 5dB | N=6 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=7.35 segsnr=-0.24 pesq=2.144 sig=3.042 bak=2.294 ovl=2.526
+2026-10-21 18:08 | mband | babble 5dB | N=6 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=6.22 segsnr=-0.66 pesq=2.259 sig=3.074 bak=2.263 ovl=2.578
+2026-10-21 18:08 | mband | car 5dB | N=8 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=7.77 segsnr=-0.08 pesq=2.126 sig=3.185 bak=2.306 ovl=2.591
+2026-10-21 18:09 | mband | babble 5dB | N=8 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=6.76 segsnr=-0.42 pesq=2.258 sig=3.223 bak=2.292 ovl=2.656
+2026-10-21 18:09 | mband | car 5dB | N=8 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=7.29 segsnr=-0.24 pesq=2.164 sig=3.104 bak=2.279 ovl=2.558
+2026-10-21 18:09 | mband | babble 5dB | N=8 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=6.47 segsnr=-0.54 pesq=2.221 sig=2.992 bak=2.219 ovl=2.506
+2026-10-21 18:09 | mband | car 5dB | N=8 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=7.01 segsnr=-0.37 pesq=2.130 sig=3.071 bak=2.275 ovl=2.531
+2026-10-21 18:10 | mband | babble 5dB | N=8 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=6.05 segsnr=-0.71 pesq=2.250 sig=3.112 bak=2.259 ovl=2.593
+2026-10-21 18:10 | mband | car 5dB | N=4 log FLOOR=0 VAD=1 Noisefr=6 AVRGING=1 | snr=7.61 segsnr=0.43 pesq=2.281 sig=3.286 bak=2.392 ovl=2.713
+2026-10-21 18:10 | mband | babble 5dB | N=4 log FLOOR=0 VAD=1 Noisefr=6 AVRGING=1 | snr=6.48 segsnr=-0.32 pesq=2.218 sig=3.014 bak=2.205 ovl=2.506
+2026-10-21 18:10 | mband | car 5dB | N=4 log FLOOR=0.001 VAD=1 Noisefr=6 AVRGING=1 | snr=7.61 segsnr=0.40 pesq=2.279 sig=3.290 bak=2.391 ovl=2.714
+2026-10-21 18:11 | mband | babble 5dB | N=4 log FLOOR=0.001 VAD=1 Noisefr=6 AVRGING=1 | snr=6.48 segsnr=-0.33 pesq=2.222 sig=3.027 bak=2.210 ovl=2.515
+2026-10-21 18:11 | mband | car 5dB | N=4 log FLOOR=0.005 VAD=1 Noisefr=6 AVRGING=1 | snr=7.62 segsnr=0.31 pesq=2.267 sig=3.296 bak=2.383 ovl=2.712
+2026-10-21 18:11 | mband | babble 5dB | N=4 log FLOOR=0.005 VAD=1 Noisefr=6 AVRGING=1 | snr=6.48 segsnr=-0.38 pesq=2.232 sig=3.067 bak=2.224 ovl=2.545
+2026-10-21 18:11 | mband | car 5dB | N=4 log FLOOR=0.01 VAD=1 Noisefr=6 AVRGING=1 | snr=7.62 segsnr=0.21 pesq=2.251 sig=3.296 bak=2.373 ovl=2.705
+2026-10-21 18:11 | mband | babble 5dB | N=4 log FLOOR=0.01 VAD=1 Noisefr=6 AVRGING=1 | snr=6.47 segsnr=-0.42 pesq=2.240 sig=3.101 bak=2.235 ovl=2.570
+2026-10-21 18:12 | mband | car 5dB | N=4 log FLOOR=0.05 VAD=1 Noisefr=6 AVRGING=1 | snr=7.48 segsnr=-0.26 pesq=2.169 sig=3.255 bak=2.313 ovl=2.647
+2026-10-21 18:12 | mband | babble 5dB | N=4 log FLOOR=0.05 VAD=1 Noisefr=6 AVRGING=1 | snr=6.32 segsnr=-0.69 pesq=2.244 sig=3.202 bak=2.258 ovl=2.635
+2026-10-21 18:12 | mband | car 5dB | N=4 log FLOOR=0.002 VAD=1 Noisefr=5 AVRGING=1 | snr=7.61 segsnr=0.38 pesq=2.276 sig=3.293 bak=2.389 ovl=2.714
+2026-10-21 18:12 | mband | babble 5dB | N=4 log FLOOR=0.002 VAD=1 Noisefr=5 AVRGING=1 | snr=6.48 segsnr=-0.34 pesq=2.224 sig=3.035 bak=2.212 ovl=2.521
+2026-10-21 18:13 | mband | car 5dB | N=4 log FLOOR=0.002 VAD=1 Noisefr=7 AVRGING=1 | snr=7.61 segsnr=0.38 pesq=2.276 sig=3.292 bak=2.389 ovl=2.714
+2026-10-21 18:13 | mband | babble 5dB | N=4 log FLOOR=0.002 VAD=1 Noisefr=7 AVRGING=1 | snr=6.46 segsnr=-0.35 pesq=2.224 sig=3.036 bak=2.213 ovl=2.522
+2026-10-21 18:13 | mband | car 5dB | N=4 log FLOOR=0.002 VAD=0 Noisefr=5 AVRGING=1 | snr=7.84 segsnr=0.52 pesq=2.313 sig=3.262 bak=2.383 ovl=2.706
+2026-10-21 18:13 | mband | babble 5dB | N=4 log FLOOR=0.002 VAD=0 Noisefr=5 AVRGING=1 | snr=6.46 segsnr=-0.46 pesq=2.220 sig=2.953 bak=2.171 ovl=2.467
+2026-10-21 18:13 | mband | car 5dB | N=4 log FLOOR=0.002 VAD=0 Noisefr=6 AVRGING=1 | snr=7.89 segsnr=0.56 pesq=2.312 sig=3.270 bak=2.391 ovl=2.711
+2026-10-21 18:14 | mband | babble 5dB | N=4 log FLOOR=0.002 VAD=0 Noisefr=6 AVRGING=1 | snr=6.53 segsnr=-0.41 pesq=2.225 sig=2.969 bak=2.184 ovl=2.480
+2026-10-21 18:14 | mband | car 5dB | N=4 log FLOOR=0.002 VAD=0 Noisefr=7 AVRGING=1 | snr=7.92 segsnr=0.58 pesq=2.311 sig=3.276 bak=2.395 ovl=2.715
+2026-10-21 18:14 | mband | babble 5dB | N=4 log FLOOR=0.002 VAD=0 Noisefr=7 AVRGING=1 | snr=6.57 segsnr=-0.35 pesq=2.231 sig=2.983 bak=2.196 ovl=2.492
+2026-10-21 18:14 | mband | car 5dB | N=4 log FLOOR=0.002 VAD=0 Noisefr=7 AVRGING=0 | snr=5.83 segsnr=-0.37 pesq=2.282 sig=3.186 bak=2.273 ovl=2.638
+2026-10-21 18:15 | mband | babble 5dB | N=4 log FLOOR=0.002 VAD=0 Noisefr=7 AVRGING=0 | snr=4.67 segsnr=-1.27 pesq=2.186 sig=2.894 bak=2.078 ovl=2.411
+2026-10-21 18:47 | mband | car 0dB | N=2 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=5.10 segsnr=-2.06 pesq=1.915 sig=2.635 bak=1.982 ovl=2.176
+2026-10-21 18:47 | mband | babble 0dB | N=2 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=2.68 segsnr=-2.90 pesq=1.894 sig=2.426 bak=1.811 ovl=2.022
+2026-10-21 18:47 | mband | car 10dB | N=2 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=9.18 segsnr=1.66 pesq=2.608 sig=3.611 bak=2.710 ovl=3.069
+2026-10-21 18:48 | mband | babble 10dB | N=2 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=8.13 segsnr=0.78 pesq=2.519 sig=3.442 bak=2.547 ovl=2.917
+2026-10-21 18:48 | mband | car 0dB | N=2 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=4.96 segsnr=-1.58 pesq=1.864 sig=2.616 bak=1.975 ovl=2.136
+2026-10-21 18:48 | mband | babble 0dB | N=2 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=3.64 segsnr=-2.15 pesq=1.872 sig=2.428 bak=1.809 ovl=1.998
+2026-10-21 18:48 | mband | car 10dB | N=2 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=9.92 segsnr=2.65 pesq=2.647 sig=3.736 bak=2.777 ovl=3.146
+2026-10-21 18:48 | mband | babble 10dB | N=2 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=8.96 segsnr=1.72 pesq=2.541 sig=3.541 bak=2.590 ovl=2.968
+2026-10-21 18:49 | mband | car 0dB | N=2 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=5.10 segsnr=-2.06 pesq=1.919 sig=2.652 bak=1.978 ovl=2.184
+2026-10-21 18:49 | mband | babble 0dB | N=2 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=2.67 segsnr=-2.91 pesq=1.894 sig=2.431 bak=1.805 ovl=2.022
+2026-10-21 18:49 | mband | car 10dB | N=2 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=9.14 segsnr=1.65 pesq=2.609 sig=3.622 bak=2.706 ovl=3.074
+2026-10-21 18:49 | mband | babble 10dB | N=2 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=8.09 segsnr=0.76 pesq=2.516 sig=3.442 bak=2.541 ovl=2.914
+2026-10-21 18:50 | mband | car 0dB | N=4 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=5.07 segsnr=-2.12 pesq=1.849 sig=2.534 bak=1.947 ovl=2.092
+2026-10-21 18:50 | mband | babble 0dB | N=4 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=2.93 segsnr=-2.77 pesq=1.916 sig=2.524 bak=1.853 ovl=2.090
+2026-10-21 18:50 | mband | car 10dB | N=4 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=9.28 segsnr=1.67 pesq=2.584 sig=3.606 bak=2.703 ovl=3.056
+2026-10-21 18:50 | mband | babble 10dB | N=4 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=8.26 segsnr=0.90 pesq=2.562 sig=3.546 bak=2.590 ovl=2.996
+2026-10-21 18:51 | mband | car 0dB | N=4 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=5.10 segsnr=-1.64 pesq=1.931 sig=2.818 bak=2.011 ovl=2.273
+2026-10-21 18:51 | mband | babble 0dB | N=4 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=3.52 segsnr=-2.38 pesq=1.907 sig=2.522 bak=1.824 ovl=2.067
+2026-10-21 18:51 | mband | car 10dB | N=4 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=9.12 segsnr=2.20 pesq=2.649 sig=3.746 bak=2.751 ovl=3.153
+2026-10-21 18:51 | mband | babble 10dB | N=4 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=8.33 segsnr=1.29 pesq=2.543 sig=3.524 bak=2.568 ovl=2.962
+2026-10-21 18:52 | mband | car 0dB | N=4 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=5.00 segsnr=-2.16 pesq=1.848 sig=2.541 bak=1.936 ovl=2.092
+2026-10-21 18:52 | mband | babble 0dB | N=4 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=2.90 segsnr=-2.78 pesq=1.910 sig=2.491 bak=1.841 ovl=2.068
+2026-10-21 18:52 | mband | car 10dB | N=4 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=9.15 segsnr=1.61 pesq=2.584 sig=3.594 bak=2.693 ovl=3.048
+2026-10-21 18:52 | mband | babble 10dB | N=4 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=8.13 segsnr=0.84 pesq=2.560 sig=3.512 bak=2.579 ovl=2.976
+2026-10-21 18:53 | mband | car 0dB | N=6 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=5.00 segsnr=-2.15 pesq=1.790 sig=2.583 bak=1.918 ovl=2.087
+2026-10-21 18:53 | mband | babble 0dB | N=6 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=3.21 segsnr=-2.65 pesq=1.908 sig=2.625 bak=1.869 ovl=2.141
+2026-10-21 18:53 | mband | car 10dB | N=6 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=9.39 segsnr=1.72 pesq=2.571 sig=3.682 bak=2.703 ovl=3.089
+2026-10-21 18:54 | mband | babble 10dB | N=6 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=8.43 segsnr=1.02 pesq=2.588 sig=3.645 bak=2.619 ovl=3.062
+2026-10-21 18:54 | mband | car 0dB | N=6 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=4.67 segsnr=-2.23 pesq=1.873 sig=2.681 bak=1.931 ovl=2.170
+2026-10-21 18:54 | mband | babble 0dB | N=6 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=3.62 segsnr=-2.57 pesq=1.867 sig=2.472 bak=1.806 ovl=2.026
+2026-10-21 18:54 | mband | car 10dB | N=6 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=9.38 segsnr=1.78 pesq=2.561 sig=3.631 bak=2.675 ovl=3.049
+2026-10-21 18:55 | mband | babble 10dB | N=6 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=8.63 segsnr=1.20 pesq=2.518 sig=3.485 bak=2.559 ovl=2.933
+2026-10-21 18:55 | mband | car 0dB | N=6 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=4.80 segsnr=-2.25 pesq=1.802 sig=2.485 bak=1.908 ovl=2.041
+2026-10-21 18:55 | mband | babble 0dB | N=6 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=3.30 segsnr=-2.66 pesq=1.898 sig=2.518 bak=1.857 ovl=2.080
+2026-10-21 18:56 | mband | car 10dB | N=6 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=8.77 segsnr=1.49 pesq=2.573 sig=3.589 bak=2.681 ovl=3.040
+2026-10-21 18:56 | mband | babble 10dB | N=6 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=7.94 segsnr=0.85 pesq=2.592 sig=3.568 bak=2.603 ovl=3.022
+2026-10-21 18:56 | mband | car 0dB | N=8 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=4.86 segsnr=-2.21 pesq=1.771 sig=2.610 bak=1.906 ovl=2.091
+2026-10-21 18:56 | mband | babble 0dB | N=8 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=3.57 segsnr=-2.55 pesq=1.880 sig=2.669 bak=1.869 ovl=2.151
+2026-10-21 18:57 | mband | car 10dB | N=8 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=9.49 segsnr=1.77 pesq=2.565 sig=3.724 bak=2.704 ovl=3.107
+2026-10-21 18:57 | mband | babble 10dB | N=8 linear FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=8.66 segsnr=1.16 pesq=2.594 sig=3.695 bak=2.635 ovl=3.091
+2026-10-21 18:57 | mband | car 0dB | N=8 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=4.61 segsnr=-2.31 pesq=1.845 sig=2.613 bak=1.905 ovl=2.119
+2026-10-21 18:58 | mband | babble 0dB | N=8 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=3.54 segsnr=-2.61 pesq=1.879 sig=2.456 bak=1.816 ovl=2.027
+2026-10-21 18:58 | mband | car 10dB | N=8 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=8.86 segsnr=1.64 pesq=2.568 sig=3.602 bak=2.666 ovl=3.036
+2026-10-21 18:58 | mband | babble 10dB | N=8 log FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=8.22 segsnr=1.08 pesq=2.541 sig=3.480 bak=2.569 ovl=2.944
+2026-10-21 18:58 | mband | car 0dB | N=8 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=4.64 segsnr=-2.32 pesq=1.793 sig=2.523 bak=1.900 ovl=2.055
+2026-10-21 18:59 | mband | babble 0dB | N=8 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=3.23 segsnr=-2.73 pesq=1.898 sig=2.562 bak=1.856 ovl=2.103
+2026-10-21 18:59 | mband | car 10dB | N=8 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=8.17 segsnr=1.27 pesq=2.564 sig=3.617 bak=2.660 ovl=3.049
+2026-10-21 18:59 | mband | babble 10dB | N=8 mel FLOOR=0.002 VAD=1 Noisefr=6 AVRGING=1 | snr=7.52 segsnr=0.71 pesq=2.580 sig=3.593 bak=2.591 ovl=3.030
+2026-10-21 19:00 | mband | car 0dB | N=4 log FLOOR=0 VAD=1 Noisefr=6 AVRGING=1 | snr=5.09 segsnr=-1.58 pesq=1.934 sig=2.818 bak=2.014 ovl=2.274
+2026-10-21 19:00 | mband | babble 0dB | N=4 log FLOOR=0 VAD=1 Noisefr=6 AVRGING=1 | snr=3.52 segsnr=-2.36 pesq=1.890 sig=2.492 bak=1.810 ovl=2.041
+2026-10-21 19:00 | mband | car 10dB | N=4 log FLOOR=0 VAD=1 Noisefr=6 AVRGING=1 | snr=9.11 segsnr=2.25 pesq=2.648 sig=3.732 bak=2.751 ovl=3.144
+2026-10-21 19:00 | mband | babble 10dB | N=4 log FLOOR=0 VAD=1 Noisefr=6 AVRGING=1 | snr=8.33 segsnr=1.31 pesq=2.538 sig=3.502 bak=2.561 ovl=2.946
+2026-10-21 19:01 | mband | car 0dB | N=4 log FLOOR=0.001 VAD=1 Noisefr=6 AVRGING=1 | snr=5.10 segsnr=-1.61 pesq=1.933 sig=2.818 bak=2.013 ovl=2.274
+2026-10-21 19:01 | mband | babble 0dB | N=4 log FLOOR=0.001 VAD=1 Noisefr=6 AVRGING=1 | snr=3.52 segsnr=-2.37 pesq=1.904 sig=2.511 bak=1.819 ovl=2.058
+2026-10-21 19:01 | mband | car 10dB | N=4 log FLOOR=0.001 VAD=1 Noisefr=6 AVRGING=1 | snr=9.11 segsnr=2.23 pesq=2.649 sig=3.740 bak=2.751 ovl=3.149
+2026-10-21 19:02 | mband | babble 10dB | N=4 log FLOOR=0.001 VAD=1 Noisefr=6 AVRGING=1 | snr=8.33 segsnr=1.30 pesq=2.541 sig=3.513 bak=2.565 ovl=2.954
+2026-10-21 19:02 | mband | car 0dB | N=4 log FLOOR=0.005 VAD=1 Noisefr=6 AVRGING=1 | snr=5.11 segsnr=-1.71 pesq=1.924 sig=2.813 bak=2.006 ovl=2.268
+2026-10-21 19:02 | mband | babble 0dB | N=4 log FLOOR=0.005 VAD=1 Noisefr=6 AVRGING=1 | snr=3.50 segsnr=-2.42 pesq=1.915 sig=2.552 bak=1.835 ovl=2.089
+2026-10-21 19:03 | mband | car 10dB | N=4 log FLOOR=0.005 VAD=1 Noisefr=6 AVRGING=1 | snr=9.12 segsnr=2.14 pesq=2.648 sig=3.760 bak=2.750 ovl=3.161
+2026-10-21 19:03 | mband | babble 10dB | N=4 log FLOOR=0.005 VAD=1 Noisefr=6 AVRGING=1 | snr=8.33 segsnr=1.26 pesq=2.549 sig=3.549 bak=2.575 ovl=2.979
+2026-10-21 19:03 | mband | car 0dB | N=4 log FLOOR=0.01 VAD=1 Noisefr=6 AVRGING=1 | snr=5.10 segsnr=-1.81 pesq=1.916 sig=2.805 bak=1.998 ovl=2.260
+2026-10-21 19:03 | mband | babble 0dB | N=4 log FLOOR=0.01 VAD=1 Noisefr=6 AVRGING=1 | snr=3.47 segsnr=-2.47 pesq=1.925 sig=2.588 bak=1.848 ovl=2.117
+2026-10-21 19:04 | mband | car 10dB | N=4 log FLOOR=0.01 VAD=1 Noisefr=6 AVRGING=1 | snr=9.11 segsnr=2.05 pesq=2.640 sig=3.773 bak=2.745 ovl=3.165
+2026-10-21 19:04 | mband | babble 10dB | N=4 log FLOOR=0.01 VAD=1 Noisefr=6 AVRGING=1 | snr=8.32 segsnr=1.21 pesq=2.554 sig=3.580 bak=2.583 ovl=3.001
+2026-10-21 19:04 | mband | car 0dB | N=4 log FLOOR=0.05 VAD=1 Noisefr=6 AVRGING=1 | snr=4.81 segsnr=-2.29 pesq=1.859 sig=2.734 bak=1.944 ovl=2.198
+2026-10-21 19:05 | mband | babble 0dB | N=4 log FLOOR=0.05 VAD=1 Noisefr=6 AVRGING=1 | snr=3.16 segsnr=-2.78 pesq=1.938 sig=2.692 bak=1.875 ovl=2.189
+2026-10-21 19:05 | mband | car 10dB | N=4 log FLOOR=0.05 VAD=1 Noisefr=6 AVRGING=1 | snr=9.04 segsnr=1.58 pesq=2.560 sig=3.765 bak=2.689 ovl=3.125
+2026-10-21 19:05 | mband | babble 10dB | N=4 log FLOOR=0.05 VAD=1 Noisefr=6 AVRGING=1 | snr=8.26 segsnr=0.94 pesq=2.549 sig=3.672 bak=2.595 ovl=3.055
+2026-10-21 19:06 | mband | car 0dB | N=4 log FLOOR=0.005 VAD=1 Noisefr=5 AVRGING=1 | snr=5.11 segsnr=-1.71 pesq=1.924 sig=2.813 bak=2.006 ovl=2.268
+2026-10-21 19:06 | mband | babble 0dB | N=4 log FLOOR=0.005 VAD=1 Noisefr=5 AVRGING=1 | snr=3.46 segsnr=-2.44 pesq=1.915 sig=2.547 bak=1.832 ovl=2.086
+2026-10-21 19:06 | mband | car 10dB | N=4 log FLOOR=0.005 VAD=1 Noisefr=5 AVRGING=1 | snr=9.12 segsnr=2.14 pesq=2.648 sig=3.760 bak=2.751 ovl=3.161
+2026-10-21 19:06 | mband | babble 10dB | N=4 log FLOOR=0.005 VAD=1 Noisefr=5 AVRGING=1 | snr=8.33 segsnr=1.27 pesq=2.551 sig=3.551 bak=2.576 ovl=2.981
+2026-10-21 19:07 | mband | car 0dB | N=4 log FLOOR=0.005 VAD=1 Noisefr=7 AVRGING=1 | snr=5.11 segsnr=-1.71 pesq=1.925 sig=2.814 bak=2.006 ovl=2.268
+2026-10-21 19:07 | mband | babble 0dB | N=4 log FLOOR=0.005 VAD=1 Noisefr=7 AVRGING=1 | snr=3.50 segsnr=-2.44 pesq=1.905 sig=2.541 bak=1.826 ovl=2.078
+2026-10-21 19:07 | mband | car 10dB | N=4 log FLOOR=0.005 VAD=1 Noisefr=7 AVRGING=1 | snr=9.12 segsnr=2.14 pesq=2.648 sig=3.761 bak=2.751 ovl=3.161
+2026-10-21 19:08 | mband | babble 10dB | N=4 log FLOOR=0.005 VAD=1 Noisefr=7 AVRGING=1 | snr=8.33 segsnr=1.26 pesq=2.552 sig=3.552 bak=2.577 ovl=2.982
+2026-10-21 19:08 | mband | car 0dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=5 AVRGING=1 | snr=5.75 segsnr=-1.41 pesq=1.951 sig=2.806 bak=2.021 ovl=2.272
+2026-10-21 19:08 | mband | babble 0dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=5 AVRGING=1 | snr=3.45 segsnr=-2.56 pesq=1.898 sig=2.480 bak=1.788 ovl=2.034
+2026-10-21 19:08 | mband | car 10dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=5 AVRGING=1 | snr=9.02 segsnr=2.08 pesq=2.650 sig=3.713 bak=2.727 ovl=3.131
+2026-10-21 19:09 | mband | babble 10dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=5 AVRGING=1 | snr=8.47 segsnr=1.30 pesq=2.543 sig=3.505 bak=2.556 ovl=2.948
+2026-10-21 19:09 | mband | car 0dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=6 AVRGING=1 | snr=5.78 segsnr=-1.39 pesq=1.934 sig=2.802 bak=2.018 ovl=2.263
+2026-10-21 19:09 | mband | babble 0dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=6 AVRGING=1 | snr=3.58 segsnr=-2.49 pesq=1.903 sig=2.497 bak=1.801 ovl=2.047
+2026-10-21 19:10 | mband | car 10dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=6 AVRGING=1 | snr=9.07 segsnr=2.13 pesq=2.652 sig=3.720 bak=2.735 ovl=3.137
+2026-10-21 19:10 | mband | babble 10dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=6 AVRGING=1 | snr=8.49 segsnr=1.33 pesq=2.547 sig=3.516 bak=2.565 ovl=2.957
+2026-10-21 19:10 | mband | car 0dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=7 AVRGING=1 | snr=5.82 segsnr=-1.37 pesq=1.934 sig=2.811 bak=2.023 ovl=2.269
+2026-10-21 19:10 | mband | babble 0dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=7 AVRGING=1 | snr=3.67 segsnr=-2.46 pesq=1.903 sig=2.507 bak=1.807 ovl=2.054
+2026-10-21 19:11 | mband | car 10dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=7 AVRGING=1 | snr=9.10 segsnr=2.17 pesq=2.655 sig=3.727 bak=2.743 ovl=3.143
+2026-10-21 19:11 | mband | babble 10dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=7 AVRGING=1 | snr=8.50 segsnr=1.36 pesq=2.551 sig=3.521 bak=2.570 ovl=2.962
+2026-10-21 19:11 | mband | car 0dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=7 AVRGING=0 | snr=4.66 segsnr=-1.88 pesq=1.954 sig=2.717 bak=1.947 ovl=2.213
+2026-10-21 19:11 | mband | babble 0dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=7 AVRGING=0 | snr=2.02 segsnr=-3.16 pesq=1.852 sig=2.383 bak=1.695 ovl=1.951
+2026-10-21 19:12 | mband | car 10dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=7 AVRGING=0 | snr=6.74 segsnr=1.14 pesq=2.638 sig=3.699 bak=2.644 ovl=3.112
+2026-10-21 19:12 | mband | babble 10dB | N=4 log FLOOR=0.005 VAD=0 Noisefr=7 AVRGING=0 | snr=6.21 segsnr=0.32 pesq=2.527 sig=3.485 bak=2.473 ovl=2.925
+2026-10-28 11:04 | mband | car 0dB | N=4 log FLOOR=0.02 VAD=0 | snr=5.62 segsnr=-1.68 pesq=1.902 sig=2.792 bak=1.997 ovl=2.246
+2026-10-28 11:04 | mband | babble 0dB | N=4 log FLOOR=0.02 VAD=0 | snr=3.48 segsnr=-2.61 pesq=1.909 sig=2.589 bak=1.832 ovl=2.109
+2026-10-28 11:04 | mband | car 10dB | N=4 log FLOOR=0.02 VAD=0 | snr=9.06 segsnr=1.89 pesq=2.633 sig=3.762 bak=2.726 ovl=3.154
+2026-10-28 11:05 | mband | babble 10dB | N=4 log FLOOR=0.02 VAD=0 | snr=8.48 segsnr=1.22 pesq=2.558 sig=3.600 bak=2.588 ovl=3.013
+2026-10-28 11:05 | mband | car 0dB | N=4 log FLOOR=0.02 VAD=1 | snr=5.06 segsnr=-1.96 pesq=1.887 sig=2.778 bak=1.977 ovl=2.233
+2026-10-28 11:05 | mband | babble 0dB | N=4 log FLOOR=0.02 VAD=1 | snr=3.40 segsnr=-2.56 pesq=1.934 sig=2.633 bak=1.863 ovl=2.149
+2026-10-28 11:06 | mband | car 10dB | N=4 log FLOOR=0.02 VAD=1 | snr=9.10 segsnr=1.90 pesq=2.619 sig=3.780 bak=2.731 ovl=3.159
+2026-10-28 11:06 | mband | babble 10dB | N=4 log FLOOR=0.02 VAD=1 | snr=8.31 segsnr=1.13 pesq=2.557 sig=3.620 bak=2.591 ovl=3.026
+2026-10-28 11:06 | mband | car 0dB | N=4 log FLOOR=0.05 VAD=0 | snr=5.18 segsnr=-2.08 pesq=1.863 sig=2.757 bak=1.960 ovl=2.212
+2026-10-28 11:06 | mband | babble 0dB | N=4 log FLOOR=0.05 VAD=0 | snr=3.24 segsnr=-2.80 pesq=1.908 sig=2.660 bak=1.850 ovl=2.155
+2026-10-28 11:06 | mband | car 10dB | N=4 log FLOOR=0.05 VAD=0 | snr=9.00 segsnr=1.57 pesq=2.580 sig=3.766 bak=2.692 ovl=3.133
+2026-10-28 11:07 | mband | babble 10dB | N=4 log FLOOR=0.05 VAD=0 | snr=8.43 segsnr=1.04 pesq=2.551 sig=3.663 bak=2.596 ovl=3.049
+2026-10-28 11:07 | mband | car 0dB | N=4 log FLOOR=0.05 VAD=1 | snr=4.81 segsnr=-2.29 pesq=1.859 sig=2.734 bak=1.944 ovl=2.198
+2026-10-28 11:07 | mband | babble 0dB | N=4 log FLOOR=0.05 VAD=1 | snr=3.16 segsnr=-2.78 pesq=1.938 sig=2.692 bak=1.875 ovl=2.189
+2026-10-28 11:07 | mband | car 10dB | N=4 log FLOOR=0.05 VAD=1 | snr=9.04 segsnr=1.58 pesq=2.560 sig=3.765 bak=2.689 ovl=3.125
+2026-10-28 11:08 | mband | babble 10dB | N=4 log FLOOR=0.05 VAD=1 | snr=8.26 segsnr=0.94 pesq=2.549 sig=3.672 bak=2.595 ovl=3.055
+2026-10-28 12:06 | mband | car 0dB | N=4 log FLOOR=0.002 VAD=0 | snr=5.80 segsnr=-1.32 pesq=1.942 sig=2.799 bak=2.022 ovl=2.264
+2026-10-28 12:07 | mband | car 0dB | N=4 log FLOOR=0.002 VAD=0 | snr=5.80 segsnr=-1.32 pesq=1.942 sig=2.799 bak=2.022 ovl=2.264
+2026-10-28 12:07 | mband | babble 0dB | N=4 log FLOOR=0.002 VAD=0 | snr=3.59 segsnr=-2.46 pesq=1.896 sig=2.462 bak=1.787 ovl=2.022
+2026-10-28 12:07 | mband | car 10dB | N=4 log FLOOR=0.002 VAD=0 | snr=9.07 segsnr=2.19 pesq=2.652 sig=3.699 bak=2.733 ovl=3.124
+2026-10-28 12:07 | mband | babble 10dB | N=4 log FLOOR=0.002 VAD=0 | snr=8.49 segsnr=1.36 pesq=2.541 sig=3.486 bak=2.556 ovl=2.936
+2026-10-28 12:08 | mband | car 0dB | N=4 log FLOOR=0.002 VAD=1 | snr=5.10 segsnr=-1.64 pesq=1.931 sig=2.818 bak=2.011 ovl=2.273
+2026-10-28 12:08 | mband | babble 0dB | N=4 log FLOOR=0.002 VAD=1 | snr=3.52 segsnr=-2.38 pesq=1.907 sig=2.522 bak=1.824 ovl=2.067
+2026-10-28 12:08 | mband | car 10dB | N=4 log FLOOR=0.002 VAD=1 | snr=9.12 segsnr=2.20 pesq=2.649 sig=3.746 bak=2.751 ovl=3.153
+2026-10-28 12:08 | mband | babble 10dB | N=4 log FLOOR=0.002 VAD=1 | snr=8.33 segsnr=1.29 pesq=2.543 sig=3.524 bak=2.568 ovl=2.962
  segsnr_m=3.298 pesq_m=2.600 sig_m=3.545 bak_m=2.686 ovl_m=2.988

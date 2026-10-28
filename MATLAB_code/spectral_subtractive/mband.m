@@ -1,14 +1,19 @@
-function mband(infile,outfile,Nband,Freq_spacing); 
+function bands=mband(infile,outfile,Nband,Freq_spacing,params);
 
 %  Implements the multi-band spectral subtraction algorithm [1].
-% 
+%
 %  Usage:  mband(infile, outputfile,Nband,Freq_spacing)
-%           
+%          mband(infile, outputfile,Nband,Freq_spacing,params)
+%
 %         infile - noisy speech file in .wav format
 %         outputFile - enhanced output file in .wav format
 %         Nband - Number of frequency bands (recommended 4-8)
 %         Freq_spacing - Type of frequency spacing for the bands, choices:
 %                        'linear', 'log' and 'mel'
+%         params - (optional) struct overriding any of the defaults below:
+%                  AVRGING, FRMSZ, OVLP, Noisefr, FLOOR, VAD
+%         bands - (optional output) FFT bins actually used by each band:
+%                 lobin, hibin (the last band always ends at fftl/2+1), fftl, fs
 %
 %  Example call:  mband('sp04_babble_sn10.wav','out_mband.wav',6,'linear');
 %
@@ -37,10 +42,18 @@ if nargin<4
     fprintf('Type "help mband" for more help.\n')
     return;
 end
+if nargin>=5
+    if isfield(params,'AVRGING'), AVRGING=params.AVRGING; end
+    if isfield(params,'FRMSZ'),   FRMSZ=params.FRMSZ;     end
+    if isfield(params,'OVLP'),    OVLP=params.OVLP;       end
+    if isfield(params,'Noisefr'), Noisefr=params.Noisefr; end
+    if isfield(params,'FLOOR'),   FLOOR=params.FLOOR;     end
+    if isfield(params,'VAD'),     VAD=params.VAD;         end
+end
 
 
-
-[in,fs]=wavread(infile);
+% [in,fs]=wavread(infile);
+[in,fs]=audioread(infile);
 
 
 frmelen=floor(FRMSZ*fs/1000);           % Frame size in samples 
@@ -75,7 +88,10 @@ otherwise
     fprintf('Error in selecting frequency spacing, type "help mbss" for help.\n');
     return;
 end
-    
+% Bins used by each band (the last band is processed up to fftl/2+1 below)
+bands.lobin=lobin; bands.hibin=[hibin(1:Nband-1) fftl/2+1];
+bands.fftl=fftl; bands.fs=fs;
+
 
 img=sqrt(-1);
 % Calculate Hamming window
@@ -240,8 +256,8 @@ for i=2:nframes
 end
 out=y1;
 
-wavwrite(out(1:length(x)),fs,16,outfile);
-
+% wavwrite(out(1:length(x)),fs,16,outfile);
+audiowrite(outfile,out(1:length(x)),fs,'BitsPerSample',16);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
