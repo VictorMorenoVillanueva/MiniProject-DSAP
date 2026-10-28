@@ -171,3 +171,4 @@
 2026-10-28 12:08 | mband | babble 0dB | N=4 log FLOOR=0.002 VAD=1 | snr=3.52 segsnr=-2.38 pesq=1.907 sig=2.522 bak=1.824 ovl=2.067
 2026-10-28 12:08 | mband | car 10dB | N=4 log FLOOR=0.002 VAD=1 | snr=9.12 segsnr=2.20 pesq=2.649 sig=3.746 bak=2.751 ovl=3.153
 2026-10-28 12:08 | mband | babble 10dB | N=4 log FLOOR=0.002 VAD=1 | snr=8.33 segsnr=1.29 pesq=2.543 sig=3.524 bak=2.568 ovl=2.962
+ segsnr_m=3.298 pesq_m=2.600 sig_m=3.545 bak_m=2.686 ovl_m=2.988

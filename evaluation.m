@@ -1,32 +1,9 @@
-function res = evaluation(method, params, noiseType, snrLevel, label)
-
-% Runs an enhancement method over all files of one noise condition and
-% returns (and appends to results.txt) the average objective measures.
-%
-%  Usage:  res = evaluation(method, params, noiseType, snrLevel, label)
-%
-%         method    - 'noisy' (unprocessed baseline), 'specsub', 'mband'
-%                     or 'wiener_as'
-%         params    - struct passed to the method (see help specsub / mband).
-%                     For mband, params.Nband (default 6) and
-%                     params.Freq_spacing (default 'linear') are also used.
-%         noiseType - 'car' or 'babble'
-%         snrLevel  - '0dB', '5dB', '10dB' or '15dB'
-%         label     - (optional) text to identify the configuration in results.txt
-%
-%  Example:
-%         p.FLOOR=0.01; p.useVAD=0; p.Nnoise=7;
-%         evaluation('specsub', p, 'car', '5dB', 'berouti, no VAD, 7 frames');
-
-if nargin<2 || isempty(params), params=struct(); end
-if nargin<3, noiseType='car'; end
-if nargin<4, snrLevel='10dB'; end
-if nargin<5, label=''; end
-
+%%
+clear all;
 addpath(genpath("MATLAB_code")); % We will use the Matlab code from Loizou
 
-% Use |audioDatastore| to create a datastore for the files in each folder.
-noisy=audioDatastore(fullfile(noiseType,snrLevel));
+% Use |audioDatastore| to create a datastore for the files in the "..." folder.
+noisy=audioDatastore("car/10dB/"); % Change it to the proper folder
 clean=audioDatastore("clean");
 nFiles=numel(noisy.Files);
 

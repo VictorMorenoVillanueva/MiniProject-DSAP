@@ -1,4 +1,4 @@
-function specsub(filename,outfile)
+function specsub(filename,outfile, BETA_FIXE, FLOOR)
 
 %  Implements the basic power spectral subtraction algorithm [1].
 % 
@@ -23,11 +23,11 @@ function specsub(filename,outfile)
 %-------------------------------------------------------------------------
 
 if nargin<2
-   fprintf('Usage: specsub inFile outFile.wav \n\n');
+   fprintf('Usage: specsub noisyfile.wav outFile.wav \n\n');
    return;
 end
 
-[x,Srate,nbits]=wavread(filename);
+[x,Srate,nbits]=audioread(filename);
 
 
 % =============== Initialize variables ===============
@@ -42,7 +42,7 @@ len2=len-len1;
 
 Thres=3; % VAD threshold in dB SNRseg 
 alpha=2.0; % power exponent
-FLOOR=0.002;
+%FLOOR=0.002;
 G=0.9;
 
 win=hamming(len); %tukey(len,PERC);  % define window
@@ -80,11 +80,11 @@ for n=1:Nframes
    
    SNRseg=10*log10(norm(sig,2)^2/norm(noise_mu,2)^2);
    
-   if alpha==1.0
-      beta=berouti1(SNRseg);
-   else
-     beta=berouti(SNRseg);
-  end
+  %if alpha==1.0
+  %    beta=berouti1(SNRseg);
+  % else
+  %   beta=berouti(SNRseg);
+  %end
    
    
    %&&&&&&&&&
@@ -125,7 +125,7 @@ end
 %========================================================================================
 
 
-wavwrite(winGain*xfinal,Srate,16,outfile);
+audiowrite(winGain*xfinal,Srate,16,outfile);
 
 
 %--------------------------------------------------------------------------
