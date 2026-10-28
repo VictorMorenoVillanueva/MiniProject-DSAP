@@ -1,4 +1,4 @@
-function mband(infile,outfile,Nband,Freq_spacing,params);
+function bands=mband(infile,outfile,Nband,Freq_spacing,params);
 
 %  Implements the multi-band spectral subtraction algorithm [1].
 %
@@ -12,6 +12,8 @@ function mband(infile,outfile,Nband,Freq_spacing,params);
 %                        'linear', 'log' and 'mel'
 %         params - (optional) struct overriding any of the defaults below:
 %                  AVRGING, FRMSZ, OVLP, Noisefr, FLOOR, VAD
+%         bands - (optional output) FFT bins actually used by each band:
+%                 lobin, hibin (the last band always ends at fftl/2+1), fftl, fs
 %
 %  Example call:  mband('sp04_babble_sn10.wav','out_mband.wav',6,'linear');
 %
@@ -86,7 +88,10 @@ otherwise
     fprintf('Error in selecting frequency spacing, type "help mbss" for help.\n');
     return;
 end
-    
+% Bins used by each band (the last band is processed up to fftl/2+1 below)
+bands.lobin=lobin; bands.hibin=[hibin(1:Nband-1) fftl/2+1];
+bands.fftl=fftl; bands.fs=fs;
+
 
 img=sqrt(-1);
 % Calculate Hamming window
