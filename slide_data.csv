@@ -1,0 +1,53 @@
+﻿TABLE 1 - VAD=0 vs VAD=1 per condition (MB 4 bands log, FLOOR=0.02)
+
+SegSNR;VAD=0;VAD=1;Difference (VAD1 - VAD0)
+Car 10 dB;1,889;1,897;0,008
+Car 0 dB;-1,683;-1,962;-0,280
+Babble 10 dB;1,216;1,130;-0,087
+Babble 0 dB;-2,608;-2,563;0,045
+
+PESQ;VAD=0;VAD=1;Difference (VAD1 - VAD0)
+Car 10 dB;2,633;2,619;-0,014
+Car 0 dB;1,902;1,887;-0,015
+Babble 10 dB;2,558;2,557;0,000
+Babble 0 dB;1,909;1,934;0,025
+
+SIG;VAD=0;VAD=1;Difference (VAD1 - VAD0)
+Car 10 dB;3,762;3,780;0,017
+Car 0 dB;2,792;2,778;-0,015
+Babble 10 dB;3,600;3,620;0,019
+Babble 0 dB;2,589;2,633;0,044
+
+BAK;VAD=0;VAD=1;Difference (VAD1 - VAD0)
+Car 10 dB;2,726;2,731;0,005
+Car 0 dB;1,997;1,977;-0,020
+Babble 10 dB;2,588;2,591;0,004
+Babble 0 dB;1,832;1,863;0,031
+
+OVL;VAD=0;VAD=1;Difference (VAD1 - VAD0)
+Car 10 dB;3,154;3,159;0,006
+Car 0 dB;2,246;2,233;-0,013
+Babble 10 dB;3,013;3,026;0,013
+Babble 0 dB;2,109;2,149;0,040
+
+
+TABLE 2 - Difference VAD1 - VAD0 per condition (positive = VAD helps)
+
+FLOOR=0.02;SegSNR;PESQ;SIG;BAK;OVL
+Car 10 dB;0,008;-0,014;0,017;0,005;0,006
+Car 0 dB;-0,280;-0,015;-0,015;-0,020;-0,013
+Babble 10 dB;-0,087;0,000;0,019;0,004;0,013
+Babble 0 dB;0,045;0,025;0,044;0,031;0,040
+
+FLOOR=0.05;SegSNR;PESQ;SIG;BAK;OVL
+Car 10 dB;0,012;-0,020;-0,001;-0,003;-0,009
+Car 0 dB;-0,211;-0,004;-0,023;-0,016;-0,014
+Babble 10 dB;-0,097;-0,002;0,010;-0,002;0,006
+Babble 0 dB;0,020;0,029;0,033;0,024;0,034
+
+
+TABLE 3 - Effect of FLOOR, mean of the 4 conditions (MB 4 bands log, VAD=1)
+FLOOR;SegSNR;PESQ;SIG;BAK;OVL
+0,002;-0,131;2,257;3,152;2,288;2,614
+0,02;-0,375;2,249;3,202;2,290;2,642
+0,05;-0,639;2,227;3,216;2,276;2,642

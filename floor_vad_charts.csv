@@ -1,0 +1,12 @@
+﻿Mean PESQ vs FLOOR (MB 4 bands log, mean of car/babble 0 and 10 dB);;
+FLOOR;VAD=0;VAD=1
+0,002;2,258;2,257
+0,02;2,250;2,249
+0,05;2,226;2,227
+;;
+Mean OVL vs FLOOR (MB 4 bands log, mean of car/babble 0 and 10 dB);;
+FLOOR;VAD=0;VAD=1
+0,002;2,586;2,614
+0,02;2,631;2,642
+0,05;2,637;2,642
+;;
