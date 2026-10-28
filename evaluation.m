@@ -1,9 +1,34 @@
-%%
-clear all;
+function res = evaluation(method, params, noiseType, snrLevel, label)
+
+% Runs an enhancement method over all files of one noise condition and
+% returns (and appends to results.txt) the average objective measures.
+%
+%  Usage:  res = evaluation(method, params, noiseType, snrLevel, label)
+%
+%         method    - 'noisy' (unprocessed baseline), 'specsub', 'mband'
+%                     or 'wiener_as'
+%         params    - struct with the method parameters:
+%                     specsub: beta_fixed ([] = Berouti, default) and FLOOR
+%                              (default 0.002), see help specsub
+%                     mband:   Nband (default 6), Freq_spacing (default
+%                              'linear') and any field of help mband
+%         noiseType - 'car' or 'babble'
+%         snrLevel  - '0dB', '5dB', '10dB' or '15dB'
+%         label     - (optional) text to identify the configuration in results.txt
+%
+%  Example:
+%         p.Nband=4; p.Freq_spacing='log'; p.FLOOR=0.02;
+%         evaluation('mband', p, 'car', '0dB', 'MB 4 log FLOOR=0.02');
+
+if nargin<2 || isempty(params), params=struct(); end
+if nargin<3, noiseType='car'; end
+if nargin<4, snrLevel='10dB'; end
+if nargin<5, label=''; end
+
 addpath(genpath("MATLAB_code")); % We will use the Matlab code from Loizou
 
-% Use |audioDatastore| to create a datastore for the files in the "..." folder.
-noisy=audioDatastore("car/10dB/"); % Change it to the proper folder
+% Use |audioDatastore| to create a datastore for the files in each folder.
+noisy=audioDatastore(fullfile(noiseType,snrLevel));
 clean=audioDatastore("clean");
 nFiles=numel(noisy.Files);
 
@@ -27,7 +52,10 @@ for n=1:nFiles
         case 'noisy'
             copyfile(noisyFile,cleanedFile);
         case 'specsub'
-            specsub(noisyFile,cleanedFile,params);
+            beta_fixed=[]; FLOOR=0.002;
+            if isfield(params,'beta_fixed'), beta_fixed=params.beta_fixed; end
+            if isfield(params,'FLOOR'), FLOOR=params.FLOOR; end
+            specsub(noisyFile,cleanedFile,beta_fixed,FLOOR);
         case 'mband'
             Nband=6; Freq_spacing='linear';
             if isfield(params,'Nband'), Nband=params.Nband; end
