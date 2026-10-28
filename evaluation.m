@@ -1,12 +1,10 @@
-
-
 %%
 clear all;
 addpath(genpath("MATLAB_code")); % We will use the Matlab code from Loizou
 fileID = fopen('results.txt','w'); % Results will be saved for comparison
 
 % Use |audioDatastore| to create a datastore for the files in the "..." folder.
-noisy=audioDatastore("car/10db"); % Change it to the proper folder
+noisy=audioDatastore("car/10dB/"); % Change it to the proper folder
 clean=audioDatastore("clean");
 
 % Read and process the contents of each file from the datastore

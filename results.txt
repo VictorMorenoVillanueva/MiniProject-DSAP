@@ -1,0 +1,2 @@
+
+ segsnr_m=3.298 pesq_m=2.600 sig_m=3.545 bak_m=2.686 ovl_m=2.988
