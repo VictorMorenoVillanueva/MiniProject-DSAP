@@ -17,7 +17,7 @@ addpath(pwd);
 addpath(genpath('MATLAB_code'));
 
 %% ---------------- CONFIGURACION ----------------
-nFiles  = 5;                                    % frases por condicion
+nFiles  = 30;                                    % frases por condicion
 conds   = {'car',10; 'car',0; 'babble',10; 'babble',0};
 betas   = [NaN 0.5 1 1.5 2 3 4 5 6 8];                    % NaN = Berouti (original)
 floors  = [0.001 0.002 0.005 0.01 0.02 0.05 0.1 0.2 0.5];
